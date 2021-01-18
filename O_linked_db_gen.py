@@ -10,7 +10,7 @@ def transformFasta_O(fastafile,glycofile):
     proteins = list(fasta.read(fastafile))
 
     #open new fastafiles
-    proteinlevel_fasta = open('Glyco_prot_O_%s' %(fastafile),'w')
+    #proteinlevel_fasta = open('Glyco_prot_O_%s' %(fastafile),'w')
     peptidelevel_fasta = open('Glyco_pep_O_%s' %(fastafile),'w')
     glycolevel_fasta = open('Glyco_glyco_O_%s' %(fastafile),'w')
 
@@ -63,16 +63,16 @@ def transformFasta_O(fastafile,glycofile):
                     peptidelevel_fasta.write('%s\n' %(peptidelevel_sequences))
                     pep_appendix +=1
 
-                if proteinlevel_sequences:   
-                    #for the proteinlevel_sequences we write the fasta 
-                    proteinlevel_sequences = insert_newlines(proteinlevel_sequences)
-                    proteinlevel_fasta.write('>sp|%s|%s %s\n' %(acc,ident,descr))
-                    proteinlevel_fasta.write('%s\n' %(proteinlevel_sequences))
+                # if proteinlevel_sequences:   
+                #     #for the proteinlevel_sequences we write the fasta 
+                #     proteinlevel_sequences = insert_newlines(proteinlevel_sequences)
+                #     proteinlevel_fasta.write('>sp|%s|%s %s\n' %(acc,ident,descr))
+                #     proteinlevel_fasta.write('%s\n' %(proteinlevel_sequences))
 
     #closing the new files
     glycolevel_fasta.close()      
     peptidelevel_fasta.close() 
-    proteinlevel_fasta.close()  
+    #proteinlevel_fasta.close()  
     print('Done')
 
 
