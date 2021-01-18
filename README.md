@@ -5,6 +5,10 @@ to run:
 
 `python O_linked_db_gen.py fasta_file.fasta glycan_list.txt`
 
+and/or
+
+`python N_linked_db_gen.py fasta_file.fasta glycan_list.txt`
+
 where `fasta_file.fasta` is a fasta protein file of the protein(s) of interest
 and `glycan_list.txt` is a list of glycans, one per line as described in: 
 
