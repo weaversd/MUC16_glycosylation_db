@@ -3,16 +3,16 @@ import sys
 import re
 from pyteomics import fasta, parser
 
-def transformFasta_N(fastafile,glycofile):
+def transformFasta_O(fastafile,glycofile):
 
     #read the fils to marry
     glycos = read_glyco(glycofile)
     proteins = list(fasta.read(fastafile))
 
     #open new fastafiles
-    proteinlevel_fasta = open('Glyco_prot_N_%s' %(fastafile),'w')
-    peptidelevel_fasta = open('Glyco_pep_N_%s' %(fastafile),'w')
-    glycolevel_fasta = open('Glyco_glyco_N_%s' %(fastafile),'w')
+    proteinlevel_fasta = open('Glyco_prot_O_%s' %(fastafile),'w')
+    peptidelevel_fasta = open('Glyco_pep_O_%s' %(fastafile),'w')
+    glycolevel_fasta = open('Glyco_glyco_O_%s' %(fastafile),'w')
 
 
     #counters
@@ -44,7 +44,7 @@ def transformFasta_N(fastafile,glycofile):
                 if pepcounter%10000==0:
                     print('Process peptide %s' %pepcounter)
                 
-                if re.search('N.[TSC]', pep): # find the pattern NxT, NxS or NxC in the peptide
+                if re.search('[TS]', pep): # find Threonin or Serin in the peptide
                     #peptides_motiv.append(pep)
                     for glyco in glycos:
 
@@ -101,4 +101,4 @@ if __name__ == '__main__':
         print('"Generate_Glycodb.py fastafile.fasta glycofile.txt"\
             \n***************************************************\n')
     else:
-        transformFasta_N(sys.argv[1],sys.argv[2])  
+        transformFasta_O(sys.argv[1],sys.argv[2])  
