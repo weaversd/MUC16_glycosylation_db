@@ -10,9 +10,9 @@ def transformFasta(fastafile,glycofile):
     proteins = list(fasta.read(fastafile))
 
     #open new fastafiles
-    proteinlevel_fasta = open('Glyco_prot_%s' %(fastafile),'w')
-    peptidelevel_fasta = open('Glyco_pep_%s' %(fastafile),'w')
-    glycolevel_fasta = open('Glyco_glyco_%s' %(fastafile),'w')
+    proteinlevel_fasta = open('Glyco_prot_N_%s' %(fastafile),'w')
+    peptidelevel_fasta = open('Glyco_pep_N_%s' %(fastafile),'w')
+    glycolevel_fasta = open('Glyco_glyco_N_%s' %(fastafile),'w')
 
 
     #counters
